@@ -477,8 +477,8 @@ static enum loop_response ask_to_continue(const char *file)
 	char buf[16];
 	char *ret;
 
-	printf("We seem to be looping a lot on %s, do you want to keep going "
-	       "on ? (y/N/a): ", file);
+	fprintf(stderr, "We seem to be looping a lot on %s, "
+               "do you want to keep going on ? (y/N/a): ", file);
 again:
 	ret = fgets(buf, 16, stdin);
 	if (!ret || *ret == '\n' || tolower(*ret) == 'n')
